@@ -5,7 +5,7 @@ const UserItem = ({ user: { login, avatar_url, html_url } }) => {
     <div className='card text-center'>
       <img src={avatar_url} className='round-img' style={{ width: '60px' }} alt='' />
       <h3>{login}</h3>
-      <a href={html_url} className='btn' target='_blank'>
+      <a href={html_url} className='btn' target='_blank' rel='noreferrer'>
         More
       </a>
     </div>
