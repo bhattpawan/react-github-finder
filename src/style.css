@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5;
+}
+
+/* Loading */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  overflow: hidden;
+}
+
+/* Users */
+
+.users {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.card-img-top {
+  width: 100px;
+  margin: 1rem auto;
+  border-radius: 50%;
+}
+
+/* Card */
+
+@media (max-width: 500px) {
+  .users {
+    grid-template-columns: 1fr;
+  }
+}
