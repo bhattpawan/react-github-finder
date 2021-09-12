@@ -29,6 +29,17 @@ body {
   border-radius: 50%;
 }
 
+.form-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.form-row .form-col:nth-of-type(1) {
+  flex: 1;
+}
+
 /* Card */
 
 @media (max-width: 500px) {
