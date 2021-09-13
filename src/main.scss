@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+$black: #222831;
+$red: #da0037;
+$blue: #00adb5;
+$white: #eeeeee;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5;
+}
+
+// Utilities
+a:link,
+a:active,
+a:visited {
+  text-decoration: none;
+}
+
+.btn {
+  height: 30px;
+  padding: 5px 8px;
+  background-color: transparent;
+  color: $black;
+  border: 1px solid $black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container {
+  padding-inline: 1rem;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+// Navbar
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 1rem;
+  background-color: $black;
+  &-header {
+    font-weight: 300;
+    color: $white;
+  }
+  & .nav-list {
+    display: flex;
+    list-style-type: none;
+    gap: 2rem;
+
+    & .nav-item {
+      & .nav-link {
+        color: $white;
+        opacity: 0.5;
+        &:hover {
+          opacity: 1;
+          transition: 0.3s;
+        }
+        &.active {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+// Search Users
+.search-users {
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & .form-control {
+    height: 30px;
+    width: 50vw;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    text-indent: 5px;
+    transition: 0.3s;
+    &:focus {
+      box-shadow: 0 0 2px 2px $blue;
+      border: 1px solid transparent;
+      outline: none;
+    }
+  }
+  & .btn {
+    margin-left: 1rem;
+  }
+}
+
+// User List
+.user-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 5rem;
+}
+
+// User Card
+.user-card {
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 2px $white;
+  text-align: center;
+
+  & .user-img {
+    width: 100px;
+    border-radius: 50%;
+  }
+
+  & .user-name {
+    padding-top: 1rem;
+  }
+  & .btn {
+    margin-top: 1rem;
+  }
+}

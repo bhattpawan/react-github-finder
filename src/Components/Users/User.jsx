@@ -1,16 +1,12 @@
-import React from 'react';
+import Button from '../Layout/Button';
 
-const User = ({ user, showUser }) => {
+const User = () => {
   return (
-    <div className='card'>
-      <img src={user.avatar_url} className='card-img-top' alt='Profile' />
-      <div className='card-body text-center'>
-        <h4>{user.login}</h4>
-        <button className='btn btn-primary btn-sm mt-3' onClick={showUser}>
-          View Details
-        </button>
-      </div>
-    </div>
+    <article className='user-card'>
+      <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/220px-User_icon_2.svg.png' alt='User Profile' className='user-img' />
+      <p className='user-name'>User Name</p>
+      <Button title='More' />
+    </article>
   );
 };
 
