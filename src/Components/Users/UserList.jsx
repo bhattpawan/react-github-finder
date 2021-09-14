@@ -1,9 +1,11 @@
 import User from './User';
 
-const UserList = () => {
+const UserList = ({ users, loading }) => {
   return (
     <section className='user-list'>
-      <User />
+      {users.map((user) => (
+        <User key={user.id} user={user} />
+      ))}
     </section>
   );
 };

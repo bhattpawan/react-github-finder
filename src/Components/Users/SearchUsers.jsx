@@ -1,11 +1,24 @@
 import Button from '../Layout/Button';
+import { useState } from 'react';
 
-const SearchUsers = () => {
+const SearchUsers = ({ findUsers }) => {
+  const [user, setUser] = useState('');
+
+  const populateUser = (e) => {
+    setUser(e.target.value);
+  };
+
+  const searchUsers = (e) => {
+    e.preventDefault();
+    findUsers(user);
+    setUser('');
+  };
+
   return (
-    <section className='search-users'>
+    <section className='search-users' onSubmit={searchUsers}>
       <form>
-        <input type='text' className='form-control' placeholder='Search Users...' />
-        <Button title='Search' />
+        <input type='text' value={user} className='form-control' placeholder='Search Users...' onChange={populateUser} />
+        <Button type='submit' title='Search' />
       </form>
     </section>
   );
