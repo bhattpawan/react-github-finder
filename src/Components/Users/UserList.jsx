@@ -1,6 +1,6 @@
 import User from './User';
 
-const UserList = ({ users, loading }) => {
+const UserList = ({ users }) => {
   return (
     <section className='user-list'>
       {users.map((user) => (

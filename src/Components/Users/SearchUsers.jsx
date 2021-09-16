@@ -2,7 +2,9 @@ import Button from '../Layout/Button';
 import { useState } from 'react';
 
 const SearchUsers = ({ findUsers }) => {
-  const [user, setUser] = useState('');
+  const [user, setUser] = useState(() => {
+    return '';
+  });
 
   const populateUser = (e) => {
     setUser(e.target.value);
