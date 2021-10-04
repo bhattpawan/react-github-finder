@@ -9,12 +9,20 @@ const GithubContext = createContext({
   getUser: (username) => {},
 });
 
+let githubClientId;
+let githubClientSecret;
+
+if (process.env.NODE_ENV !== 'production') {
+  githubClientId = process.env.REACT_APP_GITHUB_CLIENT_ID;
+  githubClientSecret = process.env.REACT_APP_GITHUB_CLIENT_SECRET_KEY;
+} else {
+  githubClientId = process.env.GITHUB_CLIENT_ID;
+  githubClientSecret = process.env.GITHUB_CLIENT_SECRET_KEY;
+}
+
 export const GithubContextProvider = ({ children }) => {
   const [users, setUsers] = useState([]);
   const [user, setUser] = useState({});
-
-  const githubClientId = process.env.REACT_APP_GITHUB_CLIENT_ID;
-  const githubClientSecret = process.env.REACT_APP_GITHUB_SECRET_KEY;
 
   const fetchInitialUsers = async () => {
     if (users.length === 0) {

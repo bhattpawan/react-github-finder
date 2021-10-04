@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Navbar from './Components/Layout/Navbar';
 import Home from './Components/Pages/Home';
 import About from './Components/Pages/About';
@@ -10,27 +10,19 @@ import './main.scss';
 
 const App = () => {
   return (
-    <Router>
+    <>
       <Navbar />
-      <Switch>
+      <GithubContextProvider>
         <Container>
-          <GithubContextProvider>
-            <Route path='/' exact>
-              <Home />
-            </Route>
-            <Route path='/user/:username'>
-              <UserDetail />
-            </Route>
-          </GithubContextProvider>
-          <Route path='/about' exact>
-            <About />
-          </Route>
-          <Route path='/*'>
-            <NotFound />
-          </Route>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/user/:username' component={UserDetail} />
+            <Route exact path='/about' component={About} />
+            <Route component={NotFound} />
+          </Switch>
         </Container>
-      </Switch>
-    </Router>
+      </GithubContextProvider>
+    </>
   );
 };
 

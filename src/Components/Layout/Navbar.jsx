@@ -6,12 +6,12 @@ const Navbar = () => {
       <h1 className='navbar-header'>GetGit</h1>
       <ul className='nav-list'>
         <li className='nav-item'>
-          <NavLink to='/' activeClassName='active' className='nav-link' exact>
+          <NavLink exact to='/' activeClassName='active' className='nav-link'>
             Home
           </NavLink>
         </li>
         <li className='nav-item'>
-          <NavLink to='/about' activeClassName='active' className='nav-link'>
+          <NavLink exact to='/about' activeClassName='active' className='nav-link'>
             About
           </NavLink>
         </li>
