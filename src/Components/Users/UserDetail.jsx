@@ -1,14 +1,19 @@
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
+import GithubContext from '../../Context/GithubContext';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 
-const UserDetail = ({ user, showCurrentUser }) => {
+const UserDetail = () => {
+  const GithubCont = useContext(GithubContext);
+
   let { username } = useParams();
+
   useEffect(() => {
-    showCurrentUser(username);
+    GithubCont.getUser(username);
+    // eslint-disable-next-line
   }, []);
 
-  const { name, avatar_url, location, bio, blog, company, html_url, followers, following, public_repos, public_gists } = user;
+  const { name, avatar_url, location, bio, blog, company, html_url, followers, following, public_repos, public_gists } = GithubCont.user;
 
   return (
     <>
@@ -25,7 +30,7 @@ const UserDetail = ({ user, showCurrentUser }) => {
               </span>
             )}
           </p>
-          <a href={html_url} target='_blank'>
+          <a href={html_url} target='_blank' rel='noopener noreferrer'>
             View GitHub
           </a>
           <ul>

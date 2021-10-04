@@ -52,6 +52,10 @@ a:visited {
   font-size: 1.5rem;
 }
 
+.no-show {
+  text-align: center;
+}
+
 // Navbar
 .navbar {
   display: flex;
@@ -99,14 +103,17 @@ a:visited {
     border-radius: 5px;
     text-indent: 5px;
     transition: 0.3s;
+    margin-right: 5px;
     &:focus {
       box-shadow: 0 0 2px 2px $blue;
       border: 1px solid transparent;
       outline: none;
     }
   }
-  & .btn {
-    margin-left: 1rem;
+  & small {
+    color: $red;
+    display: block;
+    padding: 0.5rem 0;
   }
 }
 
@@ -116,6 +123,12 @@ a:visited {
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   margin-top: 5rem;
+}
+
+@media screen and (max-width: 500px) {
+  .user-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 // User Card
@@ -188,4 +201,15 @@ a:visited {
       }
     }
   }
+}
+
+// About
+
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  flex-direction: column;
+  gap: 5rem;
 }
