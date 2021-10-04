@@ -7,9 +7,9 @@ const UserList = () => {
 
   const users = GithubCont.users;
 
-  // if (users.length === 0) {
-  //   return <section className='no-show'>Nothing to show</section>;
-  // }
+  if (users.length === 0) {
+    return <section className='no-show'>Nothing to show</section>;
+  }
 
   return (
     <section className='user-list'>
