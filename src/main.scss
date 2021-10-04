@@ -213,3 +213,13 @@ a:visited {
   flex-direction: column;
   gap: 5rem;
 }
+
+// Not Found
+.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 50vh;
+  gap: 2rem;
+}
